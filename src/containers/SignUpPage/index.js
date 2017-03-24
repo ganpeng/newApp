@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
-import LoginForm from '../../components/LoginForm/';
+import SignUpForm from '../../components/SignUpForm/';
 
-class LoginPage extends Component {
+class SignUpPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <LoginForm/>
+                <SignUpForm/>
             </View>
         );
     }
 }
 
-export default LoginPage;
+export default SignUpPage;
 
 const styles = StyleSheet.create({
     container: {
