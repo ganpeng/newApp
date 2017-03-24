@@ -37,6 +37,13 @@ const createTabs = () => {
       icon: iconsMap['ios-people'],
       screen: 'Ninja.SignUpPage',
       title: '注册'
+    },
+    {
+      label: 'Five',
+    //   icon: require('../img/two.png'),
+      icon: iconsMap['ios-people'],
+      screen: 'Ninja.MovieList',
+      title: '电影列表'
     }
   ];
 
