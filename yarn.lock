@@ -1722,6 +1722,10 @@ image-size@^0.3.5:
   version "0.3.5"
   resolved "http://registry.npm.taobao.org/image-size/download/image-size-0.3.5.tgz#83240eab2fb5b00b04aab8c74b0471e9cba7ad8c"
 
+immutable@^3.8.1:
+  version "3.8.1"
+  resolved "http://registry.npm.taobao.org/immutable/download/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
+
 immutable@~3.7.6:
   version "3.7.6"
   resolved "http://registry.npm.taobao.org/immutable/download/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
@@ -2907,11 +2911,28 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/react-deep-force-update/download/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-elements@^0.10.2:
+  version "0.10.2"
+  resolved "http://registry.npm.taobao.org/react-native-elements/download/react-native-elements-0.10.2.tgz#a8b9135f92d58f8abbc0209233e8f35e4c121878"
+  dependencies:
+    react-native-side-menu "^0.20.1"
+    react-native-tab-navigator "^0.3.3"
+
 react-native-navigation@next:
   version "2.0.0-experimental.256"
   resolved "http://registry.npm.taobao.org/react-native-navigation/download/react-native-navigation-2.0.0-experimental.256.tgz#64421e2167b1df2b49b73e9b7767ba6cc7cd8541"
   dependencies:
     lodash "4.x.x"
+
+react-native-side-menu@^0.20.1:
+  version "0.20.1"
+  resolved "http://registry.npm.taobao.org/react-native-side-menu/download/react-native-side-menu-0.20.1.tgz#df21b4bb9d8a1aa3bae53d74ddf8a739eb59bfc5"
+
+react-native-tab-navigator@^0.3.3:
+  version "0.3.3"
+  resolved "http://registry.npm.taobao.org/react-native-tab-navigator/download/react-native-tab-navigator-0.3.3.tgz#b222bad21fbe773c8d28f9a0de30ce62b08724d3"
+  dependencies:
+    immutable "^3.8.1"
 
 react-native-vector-icons@^4.0.0:
   version "4.0.0"
