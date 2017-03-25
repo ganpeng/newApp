@@ -14,8 +14,9 @@ const img = 'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p48
 
 class Movie extends Component {
   render() {
+    const { style } = this.props;
     return (
-      	<View style={styles.container}>
+      	<View style={[styles.container, style]}>
 			<Image
 				style={styles.movieImage}
 				source={{uri: img}}

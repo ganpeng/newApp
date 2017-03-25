@@ -17,13 +17,13 @@ const createTabs = () => {
       screen: 'Ninja.FirstTabScreen',
       title: 'Screen One'
     },
-    {
-      label: 'Two',
-    //   icon: require('../img/two.png'),
-      icon: iconsMap['ios-people'],
-      screen: 'Ninja.SecondTabScreen',
-      title: 'Screen Two'
-    },
+    // {
+    //   label: 'Two',
+    // //   icon: require('../img/two.png'),
+    //   icon: iconsMap['ios-people'],
+    //   screen: 'Ninja.SecondTabScreen',
+    //   title: 'Screen Two'
+    // },
     {
       label: 'Three',
     //   icon: require('../img/two.png'),
@@ -43,6 +43,13 @@ const createTabs = () => {
     //   icon: require('../img/two.png'),
       icon: iconsMap['ios-people'],
       screen: 'Ninja.MovieList',
+      title: '电影列表'
+    },
+    {
+      label: 'Six',
+    //   icon: require('../img/two.png'),
+      icon: iconsMap['ios-people'],
+      screen: 'Ninja.MoviePage',
       title: '电影列表'
     }
   ];
