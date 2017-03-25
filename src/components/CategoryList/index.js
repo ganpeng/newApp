@@ -28,7 +28,7 @@ class CategoryList extends Component {
         <View style={styles.title}>
           <Text style={styles.titleText}>分类浏览</Text>
           <List
-            containerStyle={{flexDirection:"row", flexWrap: "wrap", justifyContent: "space-between"}}
+            containerStyle={{flexDirection:"row", flexWrap: "wrap", justifyContent: "space-between", borderTopWidth:0, borderBottomWidth: 0}}
           >
             {
               list.map((item, i) => (
