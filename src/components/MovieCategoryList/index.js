@@ -51,7 +51,7 @@ export default MovieCategoryList;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
+    // paddingHorizontal: 20,
   },
   titleMore: {
     flexDirection: "row",
