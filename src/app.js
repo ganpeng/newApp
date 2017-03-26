@@ -28,8 +28,8 @@ const createTabs = () => {
       label: 'Three',
     //   icon: require('../img/two.png'),
       icon: iconsMap['ios-people'],
-      screen: 'Ninja.LoginPage',
-      title: '登录'
+      screen: 'Ninja.MovieDetailPage',
+      title: '电影详情页'
     },
     {
       label: 'Four',
