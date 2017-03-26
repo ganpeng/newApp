@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import StarRating from 'react-native-star-rating';
 
+import resolveAssetSource from 'resolveAssetSource';
+
+
 import styleUtil from '../../utils/styleUtil';
 
 const { dw } = styleUtil;
@@ -9,11 +12,6 @@ const { dw } = styleUtil;
 const imageWidth = (dw - 20 * 2 - 10) / 3;
 
 const imageHeight = (imageWidth * 297) / 200;
-
-
-const image2Width = (dw - 20 * 2 - 10) / 2;
-
-const image2Height = (imageWidth * 287) / 120;
 
 
 class MovieDetailCard extends Component {
@@ -131,8 +129,8 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   image2: {
-    width: image2Width,
-    height: image2Height,
+    width: 200,
+    height: 120,
     backgroundColor: "red"
   }
 });

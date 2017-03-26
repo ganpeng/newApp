@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import MovieDetailCard from '../../components/MovieDetailCard/';
+import CommentList from '../../components/CommentList/';
 
 
 class MovieDetail extends Component {
@@ -19,6 +20,7 @@ class MovieDetail extends Component {
      <ScrollView showsVerticalScrollIndicator={true}>
         <View style={styles.container}>
           <MovieDetailCard />
+          <CommentList />
         </View>
       </ScrollView>
     );
