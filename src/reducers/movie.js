@@ -34,6 +34,7 @@ export default (state = initialState, action = {}) => {
                 total: action.top250.total,
                 movies: [...state.top250.movies, ...action.top250.subjects]
             });
+            console.log(top250);
             return Object.assign({}, state, {
                 top250
             });

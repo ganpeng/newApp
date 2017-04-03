@@ -40,7 +40,7 @@ class MoviePage extends Component {
     }
 
     render() {
-        const { top250, in_theaters, coming_soon, navigator } = this.props;
+        const { top250, in_theaters, coming_soon, navigator, requestTop250, requestComingSoon, requestInTheaters } = this.props;
         const { isloading } = this.state;
 
         const top250MovieList = take(top250.movies, 10);
@@ -51,9 +51,9 @@ class MoviePage extends Component {
             isloading ? <View style={styles.progressBar}><ProgressBar /></View> :
             <ScrollView>
                 <View style={styles.container}>
-                    <MovieCategoryList title="Top250" movieList={top250MovieList} navigator={navigator} movies={top250} />
-                    <MovieCategoryList title="即将上映" movieList={comingSoonMovieList}  navigator={navigator} movies={in_theaters} />
-                    <MovieCategoryList title="正在上映" movieList={inTheatersMovieList}  navigator={navigator} movies={coming_soon} />
+                    <MovieCategoryList title="Top250" movieList={top250MovieList} type="top250" nextPage={requestTop250} navigator={navigator} movies={top250} />
+                    <MovieCategoryList title="即将上映" movieList={comingSoonMovieList} type="coming_soon" nextPage={requestComingSoon}  navigator={navigator} movies={in_theaters} />
+                    <MovieCategoryList title="正在上映" movieList={inTheatersMovieList} type="in_theaters" nextPage={requestInTheaters}  navigator={navigator} movies={coming_soon} />
                     <CategoryList />
                 </View>
             </ScrollView>

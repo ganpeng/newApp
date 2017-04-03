@@ -14,12 +14,12 @@ class MovieCategoryList extends Component {
     };
 
     showMovieList() {
-        const { movies, title } = this.props;
+        const { movies, title, type, nextPage } = this.props;
         this.props.navigator.showModal({
             screen: 'Ninja.MovieList',
             title,
-            passProps: { movies },
-            animated: false
+            passProps: { type, nextPage },
+            animationType: 'slide-up'
         })
     }
 

@@ -14,14 +14,18 @@ import {
 } from '../constants/';
 
 
-export function requestTop250() {
+export function requestTop250(start,precb, endcb) {
+    const _start = start || 0;
+    precb && precb();
     return dispatch => {
-        fetch(api_movie_top250)
+        fetch(`${api_movie_top250}?start=${_start}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                dispatch(receiveMoviesTop250Success(data));
+                endcb && endcb();
             })
             .catch((err) => {
+                endcb && endcb();
                 console.log(err);
             })
     }
@@ -34,7 +38,6 @@ export function requestMoviesData() {
             fetch(api_movie_in_theaters).then((res) => res.json()),
             fetch(api_movie_coming_soon).then((res) => res.json())
         ]).then((results) => {
-            console.log(results);
             const [top250, in_theaters, coming_soon] = results;
             dispatch(receiveMoviesTop250Success(top250));
             dispatch(receiveMoviesInTheatersSuccess(in_theaters));
@@ -45,29 +48,37 @@ export function requestMoviesData() {
 
 
 
-export function requestComingSoon() {
+export function requestComingSoon(start, precb, endcb) {
+    const _start = start || 0;
+    precb && precb();
     return dispatch => {
-        fetch(api_movie_coming_soon)
+        fetch(`${api_movie_coming_soon}?start=${_start}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                dispatch(receiveMoviesComingSoonSuccess(data));
+                endcb && endcb();
             })
             .catch((err) => {
                 console.log(err);
+                endcb && endcb();
             })
     }
 }
 
 
-export function requestInTheaters() {
+export function requestInTheaters(start, precb, endcb) {
+    const _start = start || 0;
+    precb && precb();
     return dispatch => {
-        fetch(api_movie_in_theaters)
+        fetch(`${api_movie_in_theaters}?start=${_start}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                dispatch(receiveMoviesInTheatersSuccess(data));
+                endcb && endcb();
             })
             .catch((err) => {
                 console.log(err);
+                endcb && endcb();
             })
     }
 }
