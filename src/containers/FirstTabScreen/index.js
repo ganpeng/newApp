@@ -39,36 +39,21 @@ class FirstTabScreen extends Component {
     }
 
   render() {
-    const { movies, top250, in_theaters, coming_soon } = this.props;
+    const {top250, in_theaters, coming_soon } = this.props;
     const { isloading } = this.state;
     return (
-        isloading ? <View style={styles.progressBar}><ProgressBar /></View> :
-            <View>
-                <View>
-                    {
-                        movies.map((movie) => {
-                            return (
-                                <View key={movie.id}>
-                                    <Text>{movie.id}</Text>
-                                    <Text>{movie.name}</Text>
-                                </View>
-                            )
-                        })
-                    }
-                </View>
-                <View>
-                    <Text>
-                        Hello
-                    </Text>
-                </View>
-            </View>
+        <View>
+            <Text>
+                Hello
+            </Text>
+        </View>
         );
     }
 }
 
 function mapStateToProps(state) {
-    const { top250, coming_soon, in_theaters, movies } = state.movie;
-    return { top250, coming_soon, in_theaters, movies };
+    const { top250, coming_soon, in_theaters } = state.movie;
+    return { top250, coming_soon, in_theaters };
 }
 
 

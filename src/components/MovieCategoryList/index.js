@@ -13,6 +13,17 @@ class MovieCategoryList extends Component {
         className: PropTypes.string,
     };
 
+    showMovieList() {
+        const { movies, title } = this.props;
+        this.props.navigator.showModal({
+            screen: 'Ninja.MovieList',
+            title,
+            passProps: { movies },
+            animated: false
+        })
+    }
+
+
     render() {
 
         const { title, movieList } = this.props;
@@ -21,7 +32,7 @@ class MovieCategoryList extends Component {
             <View style={styles.container}>
                 <View style={styles.titleMore}>
                     <Text style={styles.title}>{title}</Text>
-                    <TouchableHighlight style={styles.moreWrapper}>
+                    <TouchableHighlight style={styles.moreWrapper} onPress={this.showMovieList.bind(this)}>
                         <Text style={styles.more}>更多</Text>
                     </TouchableHighlight>
                 </View>

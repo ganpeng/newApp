@@ -36,13 +36,13 @@ const createTabs = () => {
             screen: 'Ninja.SignUpPage',
             title: '注册'
         },
-        {
-            label: 'Five',
-            //   icon: require('../img/two.png'),
-            icon: iconsMap['ios-people'],
-            screen: 'Ninja.MovieList',
-            title: '电影列表'
-        },
+        //{
+            //label: 'Five',
+            ////   icon: require('../img/two.png'),
+            //icon: iconsMap['ios-people'],
+            //screen: 'Ninja.MovieList',
+            //title: '电影列表'
+        //},
         {
             label: 'Six',
             //   icon: require('../img/two.png'),

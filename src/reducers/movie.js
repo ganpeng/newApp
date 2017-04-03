@@ -5,32 +5,56 @@ import {
 } from '../constants/';
 
 const initialState = {
-    movies: [{
-        id: 1,
-        name: '谍影虫虫'
-    }],
-    coming_soon: {}, // 即将上映
+    coming_soon: {
+        start: 0,
+        total: 0,
+        movies: []
+    }, // 即将上映
     // new_movies: {},  // 新片榜
-    in_theaters: {}, // 正在上映
+    in_theaters: {
+        start: 0,
+        total: 0,
+        movies: []
+    }, // 正在上映
     // weekly: {},  // 口碑榜
     // us_box: {},  // 北美票房榜
-    top250: {} // top250
+    top250: {
+        start: 0,
+        total: 0,
+        movies: []
+    } // top250
 };
 
 
 export default (state = initialState, action = {}) => {
     switch (action.type) {
         case RECEIVE_MOVIES_TOP250_SUCCESS:
+            const top250 = Object.assign({}, state.top250, {
+                start: action.top250.start,
+                total: action.top250.total,
+                movies: [...state.top250.movies, ...action.top250.subjects]
+            });
             return Object.assign({}, state, {
-                top250: action.top250
+                top250
             });
         case RECEIVE_MOVIES_IN_THEATERS_SUCCESS:
+            const in_theaters = Object.assign({}, state.in_theaters, {
+                start: action.in_theaters.start,
+                total: action.in_theaters.total,
+                movies: [...state.in_theaters.movies, ...action.in_theaters.subjects]
+            });
             return Object.assign({}, state, {
-                in_theaters: action.in_theaters
+                in_theaters
             });
         case RECEIVE_MOVIES_COMING_SOON_SUCCESS:
+            const coming_soon = Object.assign({}, state.coming_soon, {
+                start: action.coming_soon.start,
+                total: action.coming_soon.total,
+                movies: [...state.coming_soon.movies, ...action.coming_soon.subjects]
+            });
+            console.log(coming_soon);
             return Object.assign({}, state, {
-                coming_soon: action.coming_soon
+                coming_soon
             });
         default:
             return state;
