@@ -122,10 +122,10 @@ export default connect(mapStateToProps, {})(MovieList);
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
         backgroundColor: "#fff"
     },
     movieList: {
+        padding: 20,
         alignItems: "center",
         flexDirection: "row",
         flexWrap: "wrap",
