@@ -32,23 +32,8 @@ class MovieList extends Component {
         const {
             type,
             nextPage,
-            top250,
-            coming_soon,
-            in_theaters
         } = this.props;
-        let start, total;
-        if (type === 'top250') {
-            start = top250.start;
-            total = top250.total;
-        }
-        if (type === 'coming_soon') {
-            start = coming_soon.start;
-            total = coming_soon.total;
-        }
-        if (type === 'in_theaters') {
-            start = in_theaters.start;
-            total = in_theaters.total;
-        }
+        const { start, total } = this.props[type];
         const nextStart = start + 10;
         if (!this.state.isloading && nextStart < total) {
             nextPage(nextStart, () => {
@@ -66,20 +51,9 @@ class MovieList extends Component {
         const {
             type,
             nextPage,
-            top250,
-            coming_soon,
-            in_theaters
+            navigator
         } = this.props;
-        let movies;
-        if (type === 'top250') {
-            movies = top250.movies;
-        }
-        if (type === 'coming_soon') {
-            movies = coming_soon.movies;
-        }
-        if (type === 'in_theaters') {
-            movies = in_theaters.movies;
-        }
+        const { movies } = this.props[type]
         const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
@@ -92,7 +66,7 @@ class MovieList extends Component {
                     onEndReachedThreshold={1200}
                     contentContainerStyle={styles.movieList}
                     dataSource={dataSource}
-                    renderRow={(rowData) => <Movie movie={rowData} />}
+                    renderRow={(rowData) => <Movie movie={rowData} navigator={navigator} type={type} />}
                     pageSize={10}
                     renderFooter={() => <View style={styles.progressBar}><ProgressBar /></View>}
                 />

@@ -6,7 +6,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    TouchableHighlight
 } from 'react-native';
 
 import styleUtil from '../../utils/styleUtil';
@@ -22,6 +23,17 @@ const imageHeight = (movieWidth * 297) / 200;
 const img = 'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p480747492.jpg?imageView2/0/q/80/w/9999/h/200/format/jpg'
 
 class Movie extends Component {
+    gotoDetailPage() {
+        console.log(this.props);
+        this.props.navigator.showModal({
+            screen: "Ninja.MovieDetailPage",
+            title: "详细的页面",
+            passProps: {},
+            navigatorStyle: {},
+            navigatorButtons: {},
+            animationType: 'none'
+        });
+    }
     render() {
         const {
             style,
@@ -29,23 +41,28 @@ class Movie extends Component {
         } = this.props;
         return (
             movie ?
-            <View style={[styles.container, style]}>
-                <Image
-                    style={styles.movieImage}
-                    source={{uri: movie.images.large}}
-                />
-                <Text style={styles.movieTitle}>{movie.title}</Text>
-                <View style={styles.starRatingWrapper}>
-                    <StarRating
-                      disabled={true}
-                      maxStars={5}
-                      rating={movie.rating.average * 5 / 10}
-                      starSize={15}
-                      starColor="#f5a623"
-                />
-                    <Text style={styles.ratingText}>{movie.rating.average}</Text>
+            <TouchableHighlight
+                onPress={this.gotoDetailPage.bind(this)}
+                underlayColor="#fff"
+            >
+                <View style={[styles.container, style]}>
+                    <Image
+                        style={styles.movieImage}
+                        source={{uri: movie.images.large}}
+                    />
+                    <Text style={styles.movieTitle}>{movie.title}</Text>
+                    <View style={styles.starRatingWrapper}>
+                        <StarRating
+                          disabled={true}
+                          maxStars={5}
+                          rating={movie.rating.average * 5 / 10}
+                          starSize={15}
+                          starColor="#f5a623"
+                    />
+                        <Text style={styles.ratingText}>{movie.rating.average}</Text>
+                    </View>
                 </View>
-            </View> :
+            </TouchableHighlight> :
             null
         );
     }

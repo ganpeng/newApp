@@ -15,12 +15,6 @@ const createTabs = () => {
             title: '电影'
         },
         {
-            label: 'Three',
-            icon: iconsMap['ios-people'],
-            screen: 'Ninja.MovieDetailPage',
-            title: '电影详情页'
-        },
-        {
             label: 'Four',
             icon: iconsMap['ios-people'],
             screen: 'Ninja.SignUpPage',

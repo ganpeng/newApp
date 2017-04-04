@@ -47,7 +47,9 @@ class MovieCategoryList extends Component {
 
         const {
             title,
-            movieList
+            movieList,
+            navigator,
+            type
         } = this.props;
 
         return (
@@ -62,9 +64,9 @@ class MovieCategoryList extends Component {
                     {
                         movieList.map((movie, index) => {
                             if (index === 9) {
-                                return <Movie key={index} movie={movie} />;
+                                return <Movie key={index} movie={movie} navigator={navigator} type={type} />;
                             } else {
-                                return <Movie key={index} style={styles.movieItem} movie={movie} />;
+                                return <Movie key={index} style={styles.movieItem} movie={movie} navigator={navigator} type={type} />;
                             }
                         })
                     }

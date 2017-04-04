@@ -8,6 +8,7 @@ import {
     StyleSheet,
     ScrollView
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import MovieDetailCard from '../../components/MovieDetailCard/';
 import CommentList from '../../components/CommentList/';
@@ -18,10 +19,6 @@ class MovieDetail extends Component {
         children: PropTypes.node,
         className: PropTypes.string,
     };
-
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
@@ -35,12 +32,20 @@ class MovieDetail extends Component {
     }
 }
 
-export default MovieDetail;
+
+function mapStateToProps(state) {
+    const { top250, in_theaters, coming_soon } = state;
+    return { top250, in_theaters, coming_soon };
+}
+
+
+export default connect(mapStateToProps, {})(MovieDetail);
 
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20
+        padding: 20,
+        backgroundColor: '#fff'
     }
 });

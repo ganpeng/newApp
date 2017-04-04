@@ -13,7 +13,6 @@ import {
     api_movie_top250
 } from '../constants/';
 
-
 export function requestTop250(start, precb, endcb) {
     const _start = start || 0;
     precb && precb();
@@ -132,3 +131,4 @@ export function receiveMoviesComingSoonSuccess(coming_soon) {
         coming_soon
     }
 }
+
