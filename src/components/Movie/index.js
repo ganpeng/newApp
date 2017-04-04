@@ -24,11 +24,11 @@ const img = 'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p48
 
 class Movie extends Component {
     gotoDetailPage() {
-        console.log(this.props);
+        const { movie } = this.props;
         this.props.navigator.showModal({
             screen: "Ninja.MovieDetailPage",
             title: "详细的页面",
-            passProps: {},
+            passProps: {id: movie.id},
             navigatorStyle: {},
             navigatorButtons: {},
             animationType: 'none'

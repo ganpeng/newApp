@@ -35,7 +35,7 @@ class MovieDetailCard extends Component {
     }
 
     render() {
-
+        const { movie } = this.props;
         const image2 = [];
         for (let i = 0; i < 10; i++) {
             if (i === 9) {
@@ -46,20 +46,21 @@ class MovieDetailCard extends Component {
         }
 
         return (
+            movie ?
             <View style={styles.container}>
-                <Text style={styles.title}>金刚：骷髅岛</Text>
+                <Text style={styles.title}>{movie.title}</Text>
                 <View style={styles.infoWrapper}>
                     <View style={styles.basicInfo}>
                         <View style={styles.ratingComments}>
                             <StarRating
                                 disabled={true}
                                 maxStars={5}
-                                rating={3.5}
+                                rating={movie.rating.average * 5 / 10}
                                 starSize={15}
                                 starColor="#f5a623"
                             />
-                            <Text style={styles.ratingNum}>6.8</Text>
-                            <Text style={styles.commentsNum}>25775人评价</Text>
+                            <Text style={styles.ratingNum}>{movie.rating.average * 5 / 10}</Text>
+                            <Text style={styles.commentsNum}>{movie.ratings_count}人评价</Text>
                         </View>
                         <Text style={styles.textInfo}>
                             119分钟 / 动作 / 奇幻 / 冒险 / 乔丹·沃格特-罗伯茨(导演) / 汤姆·希德勒斯顿 / 布丽·拉尔森 / 塞缪尔·杰克逊 / 约翰·古德曼 / 景甜 / 约翰·C·赖利 / 托比·凯贝尔 / 科里·霍金斯 / 汤姆·威尔金森 / 托马斯·曼 / 杰森·米切尔 / 谢伊·惠格姆 / 约翰·奥提兹 / 尤金·科德罗 / 2017-03-24(中国大陆) 上映
@@ -84,7 +85,7 @@ class MovieDetailCard extends Component {
                         {image2}
                     </ScrollView>
                 </View>
-            </View>
+            </View> : null
         );
     }
 }

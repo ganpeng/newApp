@@ -2,6 +2,7 @@ import {
     RECEIVE_MOVIES_COMING_SOON_SUCCESS,
     RECEIVE_MOVIES_IN_THEATERS_SUCCESS,
     RECEIVE_MOVIES_TOP250_SUCCESS,
+    GET_MOVIE_DETAIL_SUCCESS
 } from '../constants/';
 
 const initialState = {
@@ -22,7 +23,8 @@ const initialState = {
         start: 0,
         total: 0,
         movies: []
-    } // top250
+    }, // top250
+    movieDetail: null
 };
 
 
@@ -34,7 +36,6 @@ export default (state = initialState, action = {}) => {
                 total: action.top250.total,
                 movies: [...state.top250.movies, ...action.top250.subjects]
             });
-            console.log(top250);
             return Object.assign({}, state, {
                 top250
             });
@@ -53,10 +54,11 @@ export default (state = initialState, action = {}) => {
                 total: action.coming_soon.total,
                 movies: [...state.coming_soon.movies, ...action.coming_soon.subjects]
             });
-            console.log(coming_soon);
             return Object.assign({}, state, {
                 coming_soon
             });
+        case GET_MOVIE_DETAIL_SUCCESS:
+            return Object.assign({}, state, {movieDetail: action.movie});
         default:
             return state;
     }

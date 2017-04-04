@@ -5,12 +5,14 @@ import {
     // RECEIVE_MOVIES_WEEKLY_SUCCESS,
     // RECEIVE_MOVIES_US_BOX_SUCCESS,
     RECEIVE_MOVIES_TOP250_SUCCESS,
+    GET_MOVIE_DETAIL_SUCCESS,
     api_movie_coming_soon,
     // api_movie_new_movies,
     api_movie_in_theaters,
     // api_movie_weekly,
     // api_movie_us_box,
-    api_movie_top250
+    api_movie_top250,
+    api_movie_detail
 } from '../constants/';
 
 export function requestTop250(start, precb, endcb) {
@@ -131,4 +133,28 @@ export function receiveMoviesComingSoonSuccess(coming_soon) {
         coming_soon
     }
 }
+
+
+export function getMovieDetailSuccess(movie) {
+    return {
+        type: GET_MOVIE_DETAIL_SUCCESS,
+        movie
+    }
+}
+
+
+export function getMovieDetailRequest(id) {
+    return dispatch => {
+        fetch(`${api_movie_detail}${id}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                dispatch(getMovieDetailSuccess(data));
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+}
+
 

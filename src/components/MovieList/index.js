@@ -54,6 +54,7 @@ class MovieList extends Component {
             navigator
         } = this.props;
         const { movies } = this.props[type]
+        console.log(movies);
         const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
