@@ -27,7 +27,7 @@ class Movie extends Component {
         const { movie } = this.props;
         this.props.navigator.showModal({
             screen: "Ninja.MovieDetailPage",
-            title: "详细的页面",
+            title: movie.title,
             passProps: {id: movie.id},
             navigatorStyle: {},
             navigatorButtons: {},

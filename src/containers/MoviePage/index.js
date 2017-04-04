@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     progressBar: {
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "#fff",
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
