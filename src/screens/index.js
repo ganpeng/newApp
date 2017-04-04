@@ -1,4 +1,6 @@
-import { Navigation } from 'react-native-navigation';
+import {
+    Navigation
+} from 'react-native-navigation';
 
 
 import FirstTabScreen from '../containers/FirstTabScreen/';
@@ -12,12 +14,12 @@ import Drawer from '../components/Drawer/';
 
 
 export function registerScreens(store, Provider) {
-  Navigation.registerComponent('Ninja.FirstTabScreen', () => FirstTabScreen, store, Provider);
-  Navigation.registerComponent('Ninja.SecondTabScreen', () => SecondTabScreen, store, Provider);
-  Navigation.registerComponent('Ninja.LoginPage', () => LoginPage, store, Provider);
-  Navigation.registerComponent('Ninja.SignUpPage', () => SignUpPage, store, Provider);
-  Navigation.registerComponent('Ninja.MoviePage', () => MoviePage, store, Provider);
-  Navigation.registerComponent('Ninja.MovieDetailPage', () => MovieDetailPage, store, Provider);
-  Navigation.registerComponent('Ninja.MovieList', () => MovieList, store, Provider);
-  Navigation.registerComponent('Ninja.Drawer', () => Drawer);
+    Navigation.registerComponent('Ninja.FirstTabScreen', () => FirstTabScreen, store, Provider);
+    Navigation.registerComponent('Ninja.SecondTabScreen', () => SecondTabScreen, store, Provider);
+    Navigation.registerComponent('Ninja.LoginPage', () => LoginPage, store, Provider);
+    Navigation.registerComponent('Ninja.SignUpPage', () => SignUpPage, store, Provider);
+    Navigation.registerComponent('Ninja.MoviePage', () => MoviePage, store, Provider);
+    Navigation.registerComponent('Ninja.MovieDetailPage', () => MovieDetailPage, store, Provider);
+    Navigation.registerComponent('Ninja.MovieList', () => MovieList, store, Provider);
+    Navigation.registerComponent('Ninja.Drawer', () => Drawer);
 }

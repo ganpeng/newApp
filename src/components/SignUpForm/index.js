@@ -1,10 +1,19 @@
-import React, {Component} from 'react';
-import {StyleSheet, TouchableHighlight, Text, View} from 'react-native';
+import React, {
+    Component
+} from 'react';
+import {
+    StyleSheet,
+    TouchableHighlight,
+    Text,
+    View
+} from 'react-native';
 
 import TextInputField from '../TextInputField/';
 import styleUtil from '../../utils/styleUtil';
 
-const { mainColor } = styleUtil;
+const {
+    mainColor
+} = styleUtil;
 
 
 class SignUpForm extends Component {
@@ -13,7 +22,7 @@ class SignUpForm extends Component {
         this.state = {
             phone: "",
             password: "",
-			confirmPassword: "",
+            confirmPassword: "",
             errors: {}
         }
         this.onPress = this.onPress.bind(this);
@@ -27,18 +36,29 @@ class SignUpForm extends Component {
     }
 
     onChangePhoneText(phone) {
-        this.setState({phone});
+        this.setState({
+            phone
+        });
     }
 
     onChangePasswordText(password) {
-        this.setState({password});
+        this.setState({
+            password
+        });
     }
 
     onChangeConfirmPasswordText(confirmPassword) {
-        this.setState({confirmPassword});
+        this.setState({
+            confirmPassword
+        });
     }
     render() {
-        const {phone, password, confirmPassword, errors} = this.state;
+        const {
+            phone,
+            password,
+            confirmPassword,
+            errors
+        } = this.state;
         return (
             <View style={styles.container}>
                 <View style={styles.formContainer}>

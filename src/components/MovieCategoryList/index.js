@@ -1,10 +1,21 @@
-import React, { Component, PropTypes } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, ScrollView } from 'react-native';
+import React, {
+    Component,
+    PropTypes
+} from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableHighlight,
+    ScrollView
+} from 'react-native';
 
 import styleUtil from '../../utils/styleUtil';
 import Movie from '../Movie/';
 
-const { mainColor } = styleUtil;
+const {
+    mainColor
+} = styleUtil;
 
 
 class MovieCategoryList extends Component {
@@ -14,11 +25,19 @@ class MovieCategoryList extends Component {
     };
 
     showMovieList() {
-        const { movies, title, type, nextPage } = this.props;
+        const {
+            movies,
+            title,
+            type,
+            nextPage
+        } = this.props;
         this.props.navigator.showModal({
             screen: 'Ninja.MovieList',
             title,
-            passProps: { type, nextPage },
+            passProps: {
+                type,
+                nextPage
+            },
             animationType: 'slide-up'
         })
     }
@@ -26,7 +45,10 @@ class MovieCategoryList extends Component {
 
     render() {
 
-        const { title, movieList } = this.props;
+        const {
+            title,
+            movieList
+        } = this.props;
 
         return (
             <View style={styles.container}>

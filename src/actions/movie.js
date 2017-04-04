@@ -14,7 +14,7 @@ import {
 } from '../constants/';
 
 
-export function requestTop250(start,precb, endcb) {
+export function requestTop250(start, precb, endcb) {
     const _start = start || 0;
     precb && precb();
     return dispatch => {

@@ -1,40 +1,46 @@
-import React, { Component, PropTypes } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import React, {
+    Component,
+    PropTypes
+} from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    ScrollView
+} from 'react-native';
 
 import MovieDetailCard from '../../components/MovieDetailCard/';
 import CommentList from '../../components/CommentList/';
 
 
 class MovieDetail extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-  };
+    static propTypes = {
+        children: PropTypes.node,
+        className: PropTypes.string,
+    };
 
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
-     <ScrollView showsVerticalScrollIndicator={true}>
-        <View style={styles.container}>
-          <MovieDetailCard />
-          <CommentList />
-        </View>
-      </ScrollView>
-    );
-  }
+    render() {
+        return (
+            <ScrollView showsVerticalScrollIndicator={true}>
+                <View style={styles.container}>
+                    <MovieDetailCard />
+                    <CommentList />
+                </View>
+            </ScrollView>
+        );
+    }
 }
 
 export default MovieDetail;
 
 
 const styles = StyleSheet.create({
-  container: {
-    // paddingHorizontal: 20
-    flex: 1,
-    padding: 20
-  }
+    container: {
+        flex: 1,
+        padding: 20
+    }
 });
-

@@ -9,7 +9,9 @@ import {
 
 import styleUtil from '../../utils/styleUtil';
 
-const { mainColor } = styleUtil;
+const {
+    mainColor
+} = styleUtil;
 
 
 class ProgressBar extends Component {

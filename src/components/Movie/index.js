@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React, {
+    Component
+} from 'react';
 import StarRating from 'react-native-star-rating';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image
+} from 'react-native';
 
 import styleUtil from '../../utils/styleUtil';
 
-const { dw } = styleUtil;
+const {
+    dw
+} = styleUtil;
 
 const movieWidth = (dw - 20 * 2 - 10) / 2;
 
@@ -14,7 +23,10 @@ const img = 'https://qnmob2.doubanio.com/view/movie_poster_cover/lpst/public/p48
 
 class Movie extends Component {
     render() {
-        const { style, movie } = this.props;
+        const {
+            style,
+            movie
+        } = this.props;
         return (
             movie ?
             <View style={[styles.container, style]}>
@@ -33,8 +45,8 @@ class Movie extends Component {
                 />
                     <Text style={styles.ratingText}>{movie.rating.average}</Text>
                 </View>
-            </View>
-            : null
+            </View> :
+            null
         );
     }
 }

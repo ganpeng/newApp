@@ -8,13 +8,17 @@ import {
     ScrollView,
     ListView
 } from 'react-native';
-import { connect } from 'react-redux';
+import {
+    connect
+} from 'react-redux';
 
 import Movie from '../Movie/';
 import ProgressBar from '../ProgressBar/';
 
 import styleUtil from '../../utils/styleUtil';
-const { dw } = styleUtil;
+const {
+    dw
+} = styleUtil;
 
 class MovieList extends Component {
     constructor(props) {
@@ -25,7 +29,13 @@ class MovieList extends Component {
     }
 
     retrieveNextPage() {
-        const { type, nextPage, top250, coming_soon, in_theaters } = this.props;
+        const {
+            type,
+            nextPage,
+            top250,
+            coming_soon,
+            in_theaters
+        } = this.props;
         let start, total;
         if (type === 'top250') {
             start = top250.start;
@@ -41,15 +51,25 @@ class MovieList extends Component {
         }
         const nextStart = start + 10;
         if (!this.state.isloading && nextStart < total) {
-            nextPage(nextStart,() => {
-                this.setState({isloading: true});
+            nextPage(nextStart, () => {
+                this.setState({
+                    isloading: true
+                });
             }, () => {
-                this.setState({isloading: false});
+                this.setState({
+                    isloading: false
+                });
             });
         }
     }
     render() {
-        const { type, nextPage, top250, coming_soon, in_theaters } = this.props;
+        const {
+            type,
+            nextPage,
+            top250,
+            coming_soon,
+            in_theaters
+        } = this.props;
         let movies;
         if (type === 'top250') {
             movies = top250.movies;
@@ -60,7 +80,9 @@ class MovieList extends Component {
         if (type === 'in_theaters') {
             movies = in_theaters.movies;
         }
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
         const dataSource = ds.cloneWithRows(movies);
         return (
             <View style={styles.container}>
@@ -81,8 +103,16 @@ class MovieList extends Component {
 
 
 function mapStateToProps(state) {
-    const { top250, coming_soon, in_theaters } = state.movie;
-    return { top250, coming_soon, in_theaters };
+    const {
+        top250,
+        coming_soon,
+        in_theaters
+    } = state.movie;
+    return {
+        top250,
+        coming_soon,
+        in_theaters
+    };
 }
 
 
