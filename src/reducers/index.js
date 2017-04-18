@@ -3,9 +3,11 @@ import {
 } from 'redux';
 
 import movie from './movie';
+import comment from './comment';
 
 const rootReducer = combineReducers({
-    movie
+    movie,
+    comment
 });
 
 export default rootReducer;
