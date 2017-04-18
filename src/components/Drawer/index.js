@@ -8,11 +8,19 @@ import {
     Image
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import styleUtil from '../../utils/styleUtil';
 
 const {
     mainColor
 } = styleUtil;
+
+const MessageIcon = (<Icon name="commenting" size={20} color={mainColor} />);
+const StarIcon = (<Icon name="star" size={20} color={mainColor} />);
+const InfoIcon = (<Icon name="address-card" size={20} color={mainColor} />);
+const AngleRightIcon = (<Icon name="angle-right" size={20} color={mainColor} />);
+
 
 class Drawer extends Component {
     render() {
@@ -26,13 +34,16 @@ class Drawer extends Component {
                 </View>
                 <View style={styles.menuList}>
                     <View style={styles.menuItem}>
-                        <Text>我的消息</Text>
+                        {MessageIcon}
+                        <Text style={styles.menuItemText}>我的消息</Text>
                     </View>
                     <View style={styles.menuItem}>
-                        <Text>我的收藏</Text>
+                        {StarIcon}
+                        <Text style={styles.menuItemText}>我的收藏</Text>
                     </View>
                     <View style={styles.menuItem}>
-                        <Text>我的资料</Text>
+                        {InfoIcon}
+                        <Text style={styles.menuItemText}>我的资料</Text>
                     </View>
                 </View>
             </View>
@@ -61,9 +72,20 @@ const styles = StyleSheet.create({
     },
     username: {
         textAlign: "center",
-        marginTop: 10
+        marginTop: 10,
+        color: "#fff"
     },
     menuList: {
-
+    },
+    menuItem: {
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 20,
+        height: 40,
+        backgroundColor: "#f2f2f2",
+        marginBottom: 5
+    },
+    menuItemText: {
+        marginLeft: 20
     }
 })
